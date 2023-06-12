@@ -1,0 +1,98 @@
+@use "_resets.scss";
+@use "_colors.scss";
+@use "_mixins.scss";
+// @use "_media-queries.scss";
+
+body {
+  font: 1rem "Poppins", sans-serif;
+  padding: 5rem clamp(1rem, 0.5rem + 6vw, 2.5rem);
+  background: colors.$red url("../images/bg-intro-mobile.png") top/cover
+    no-repeat;
+}
+
+main {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 0.75rem + 6vw, 3rem);
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+#trial-promo {
+  margin-top: 3rem;
+  background-color: colors.$blue;
+  color: white;
+  padding: 1rem min(0.5rem + 8vw, 3rem);
+  text-align: center;
+  border-radius: 10px;
+
+  @include mixins.simple-box-shadow(8px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+
+  @include mixins.simple-box-shadow(8px);
+
+  input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    color: colors.$dark-blue;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  button {
+    background-color: colors.$green;
+    color: white;
+    font-weight: 500;
+    padding: 0.9rem;
+    border: none;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    text-transform: uppercase;
+
+    // @include mixins.simple-box-shadow(3px);
+  }
+
+  p {
+    padding: 0.9rem;
+    color: colors.$grayish-blue;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: colors.$red;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+}

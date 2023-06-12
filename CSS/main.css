@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font: 1rem "Poppins", sans-serif;
+  padding: 5rem clamp(1rem, 0.5rem + 6vw, 2.5rem);
+  background: hsl(0, 100%, 74%) url("../images/bg-intro-mobile.png") top/cover no-repeat;
+}
+
+main {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 0.75rem + 6vw, 3rem);
+  line-height: 1.2;
+  margin: 2rem 0;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+#trial-promo {
+  margin-top: 3rem;
+  background-color: hsl(248, 32%, 49%);
+  color: white;
+  padding: 1rem min(0.5rem + 8vw, 3rem);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+form input {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  color: hsl(249, 10%, 26%);
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+form input::-moz-placeholder {
+  opacity: 0.5;
+}
+form input::placeholder {
+  opacity: 0.5;
+}
+form button {
+  background-color: hsl(154, 59%, 51%);
+  color: white;
+  font-weight: 500;
+  padding: 0.9rem;
+  border: none;
+  border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+form p {
+  padding: 0.9rem;
+  color: hsl(246, 25%, 77%);
+  font-size: 0.7rem;
+  text-align: center;
+}
+form a {
+  text-decoration: none;
+  color: hsl(0, 100%, 74%);
+}
+
+@media only screen and (min-width: 40em) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+}/*# sourceMappingURL=main.css.map */
