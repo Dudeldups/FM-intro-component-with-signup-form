@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution on Frontend Mentor](https://your-solution-url.com)
+- [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/htmlscssjs-simple-signup-form-lsh1hCXee_)
 - [Live site](https://dudeldups.github.io/FM-intro-component-with-signup-form/)
 
 ## My process
