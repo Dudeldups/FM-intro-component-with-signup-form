@@ -35,6 +35,7 @@ function validateInput() {
       setError(
         inputContainer,
         errorEl,
+        errorIcon,
         "Password has to be at least 8 characters long"
       );
     } else {
