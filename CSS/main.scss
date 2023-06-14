@@ -1,11 +1,10 @@
 @use "_resets.scss";
 @use "_colors.scss";
 @use "_mixins.scss";
-// @use "_media-queries.scss";
 
 body {
   font: 1rem "Poppins", sans-serif;
-  padding: 5rem clamp(1rem, 0.5rem + 6vw, 2.5rem);
+  padding: 5rem clamp(0.8rem, -1.5rem + 15vw, 2.5rem);
   background: colors.$red url("../images/bg-intro-mobile.png") top/cover
     no-repeat;
 }
@@ -39,35 +38,24 @@ h1 {
   text-align: center;
   border-radius: 10px;
 
-  @include mixins.simple-box-shadow(8px);
+  @include mixins.simple-box-shadow;
 }
 
-form {
+#signup-form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   background-color: white;
   margin-top: 1.5rem;
   padding: 1.5rem;
   border-radius: 10px;
 
-  @include mixins.simple-box-shadow(8px);
-
-  input {
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    color: colors.$dark-blue;
-    font-weight: 500;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-
-    &::placeholder {
-      opacity: 0.5;
-    }
-  }
+  @include mixins.simple-box-shadow;
 
   button {
     background-color: colors.$green;
     color: white;
+    cursor: pointer;
     font-weight: 500;
     padding: 0.9rem;
     border: none;
@@ -75,11 +63,13 @@ form {
     border-radius: 6px;
     text-transform: uppercase;
 
-    // @include mixins.simple-box-shadow(3px);
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   p {
-    padding: 0.9rem;
+    padding: 0 0.9rem;
     color: colors.$grayish-blue;
     font-size: 0.7rem;
     text-align: center;
@@ -91,8 +81,72 @@ form {
   }
 }
 
-@media only screen and (min-width: 40em) {
+.input-container {
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    color: colors.$dark-blue;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  .error-icon {
+    display: none;
+    position: absolute;
+    top: 0.9em;
+    right: 1.5em;
+  }
+
+  .error-message {
+    display: none;
+    margin-top: 0.2rem;
+    color: colors.$red;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+  }
+
+  &.error input {
+    border: 2px solid colors.$red;
+  }
+
+  &.valid input {
+    border: 2px solid colors.$green;
+  }
+}
+
+@media only screen and (min-width: 50.5em) {
   body {
     background-image: url("../images/bg-intro-desktop.png");
+    padding: 0 2.5rem;
+  }
+
+  main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 70rem;
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  #title {
+    text-align: left;
+  }
+
+  #signup-form {
+    padding: clamp(1.5rem, -4rem + 10vw, 2.5rem);
   }
 }

@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="CSS/main.css" />
+    <script defer src="main.js"></script>
     <title>Frontend Mentor | Intro component with sign up form</title>
   </head>
   <body>
@@ -28,44 +29,82 @@
           invaluable.
         </p>
       </div>
-      <div id="trial-promo">
-        <span class="bold">Try it free 7 days</span> then $20/mo. thereafter
+      <div>
+        <div id="trial-promo">
+          <span class="bold">Try it free 7 days</span> then $20/mo. thereafter
+        </div>
+        <form id="signup-form" action="/" method="GET">
+          <div class="input-container">
+            <input
+              aria-label="First Name"
+              type="text"
+              placeholder="First Name"
+              id="first-name"
+              name="first-name"
+            />
+            <img
+              aria-hidden="true"
+              src="./images/icon-error.svg"
+              alt="error icon"
+              class="error-icon"
+            />
+            <div class="error-message">Error message</div>
+          </div>
+          <div class="input-container">
+            <input
+              aria-label="Last Name"
+              type="text"
+              placeholder="Last Name"
+              id="last-name"
+              name="last-name"
+            />
+            <img
+              aria-hidden="true"
+              src="./images/icon-error.svg"
+              alt="error icon"
+              class="error-icon"
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="input-container">
+            <input
+              aria-label="Email Address"
+              type="text"
+              placeholder="Email Address"
+              id="email"
+              name="email"
+            />
+            <img
+              aria-hidden="true"
+              src="./images/icon-error.svg"
+              alt="error icon"
+              class="error-icon"
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="input-container">
+            <input
+              aria-label="Password"
+              type="password"
+              placeholder="Password"
+              id="password"
+              name="password"
+            />
+            <img
+              aria-hidden="true"
+              src="./images/icon-error.svg"
+              alt="error icon"
+              class="error-icon"
+            />
+            <div class="error-message"></div>
+          </div>
+          <button>Claim your free trial</button>
+          <p>
+            By clicking the button, you are agreeing to our
+            <a href="#" class="bold">Terms and Services</a>
+          </p>
+        </form>
       </div>
-      <form action="submit">
-        <input
-          aria-label="First Name"
-          type="text"
-          placeholder="First Name"
-          id="first-name"
-          name="first-name"
-        />
-        <input
-          aria-label="Last Name"
-          type="text"
-          placeholder="Last Name"
-          id="last-name"
-          name="last-name"
-        />
-        <input
-          aria-label="Email Address"
-          type="email"
-          placeholder="Email Address"
-          id="email-address"
-          name="email-address"
-        />
-        <input
-          aria-label="Password"
-          type="password"
-          placeholder="Password"
-          id="password"
-          name="password"
-        />
-        <button>Claim your free trial</button>
-        <p>
-          By clicking the button, you are agreeing to our
-          <a href="#" class="bold">Terms and Services</a>
-        </p>
-      </form>
     </main>
   </body>
 </html>
